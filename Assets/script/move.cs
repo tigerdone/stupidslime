@@ -7,42 +7,18 @@ public class move : MonoBehaviour
 
     public Rigidbody2D rig;
     public Transform origin;
-    //public Transform bg1;
-    //public Transform bg2;
-    //public Transform bg3;
-    //public Transform bg4;
-    //public Transform mGroundCheck;
-
     public int MaxSpeed = 10;
-    //public int FlySpeed = 20;
-
     public int Moveforce = 80;
     public int force = 500;
-    //public float bgchangetimes = 1f;
-
-
-    //animate
     public Animator anim;
 
-
-    //private int dirc = 1;
-    //private float bgchange = 1f;
-
+    //public camera_follow _Follow;
+    //public Camera Cameras;
 
     //time
     private float time1 = 0;
     private float time2 = 0;
     private bool fail = false;
-
-    //private float dic_time1 = 0;
-    //private float dic_time2 = 0;
-
-
-
-
-    //private bool bFacerright = true;
-    //private bool bJump = false;
-
 
     // Use this for initialization
     void Start()
@@ -105,17 +81,13 @@ public class move : MonoBehaviour
     {
         //dic_control();
         move_control();
-
+        position_limite();
+        //for (int i = 0; i < 1; i++)
+        //{
+        //    Debug.Log(Cameras.orthographicSize);
+        //}
     }
 
-    //void flip()
-    //{
-    //    bFacerright = !bFacerright;
-    //    Vector3 theScale = transform.localScale;
-    //    theScale.x *= -1;
-    //    transform.localScale = theScale;
-
-    //}
     void alive()
     {
         float step = 8 * Time.deltaTime;
@@ -303,20 +275,26 @@ public class move : MonoBehaviour
 
 
     }
-    //void dic_control()
-    //{
-    //    if (Input.GetKeyUp(KeyCode.A) && Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
-    //    {
-    //        dic_time1 = Time.time;
-    //    }
-    //    if (Input.GetKey(KeyCode.A) && Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
-    //    {
-    //        dic_time1 = Time.time;
-    //    }
-    //    //if
 
-
-    //}
+    void position_limite()
+    {
+        //if(rig.position.x > (_Follow.maxXAndY.x + Cameras.orthographicSize))
+        //{
+        //    rig.position = new Vector2(_Follow.maxXAndY.x + Cameras.orthographicSize, rig.position.y);
+        //}
+        //if (rig.position.x < (_Follow.minXAndY.x - Cameras.orthographicSize/2))
+        //{
+        //    rig.position = new Vector2(_Follow.minXAndY.x - Cameras.orthographicSize, rig.position.y);
+        //}
+        if (rig.position.x > 51)
+        {
+            rig.position = new Vector2(51, rig.position.y);
+        }
+        if (rig.position.x < -37.8f)
+        {
+            rig.position = new Vector2(-37.8f, rig.position.y);
+        }
+    }
 
 }
 

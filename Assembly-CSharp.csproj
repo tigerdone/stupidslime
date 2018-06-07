@@ -53,10 +53,14 @@
   <ItemGroup>
      <Compile Include="Assets\script\_7_5_1.cs" />
      <Compile Include="Assets\script\bg_move.cs" />
+     <Compile Include="Assets\script\bg_move1.cs" />
      <Compile Include="Assets\script\Bubble.cs" />
      <Compile Include="Assets\script\camera_follow.cs" />
      <Compile Include="Assets\script\create_stair.cs" />
      <Compile Include="Assets\script\draw_line.cs" />
+     <Compile Include="Assets\script\get_grass.cs" />
+     <Compile Include="Assets\script\grass.cs" />
+     <Compile Include="Assets\script\jump.cs" />
      <Compile Include="Assets\script\move.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>H:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

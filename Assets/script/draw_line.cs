@@ -18,7 +18,7 @@ public class draw_line : MonoBehaviour {
     void Start()
     {
         //初始化鼠标线段链表
-        //lineInfo = new List<Vector3>();
+        lineInfo = new List<Vector3>();
 
     }
     void FixedUpdate()
@@ -106,9 +106,7 @@ public class draw_line : MonoBehaviour {
 
             }
         }
-
         return lineInfo;
-
     }
 
 }
