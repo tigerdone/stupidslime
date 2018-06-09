@@ -15,7 +15,7 @@ public class get_grass : MonoBehaviour {
     public float interval = 10f;
     //public float interval_wall = 68f;
 
-    public float nast_grass_y = 35.4f;
+    public float nest_grass_y = 35.4f;
     //public float nast_wall_y = 78.9f;
 
 
@@ -55,9 +55,9 @@ public class get_grass : MonoBehaviour {
 
         if (count > 0)
         {
-            Instantiate(grass, new Vector3(x_position, nast_grass_y, 3), Quaternion.identity);
+            Instantiate(grass, new Vector3(x_position, nest_grass_y, 3), Quaternion.identity);
             count--;
-            nast_grass_y += 10;
+            nest_grass_y += 10;
 
         }
     }

@@ -19,11 +19,12 @@ public class grass : MonoBehaviour {
         check();
 
     }
-    void check()
+
+    public void check()
     {
         if(Time.time - start_time > 2)
         {
-            if (Mathf.Abs(transform.position.y - slime.transform.position.y) > 30)
+            if ((slime.transform.position.y - transform.position.y) > 30)
             {
                 //Debug.Log("OK");
                 Destroy(this.gameObject);

@@ -390,10 +390,10 @@ MonoBehaviour:
   bg1: {fileID: 1649100838}
   bg2: {fileID: 1062291202}
   slime: {fileID: 668880630}
-  flower1: {fileID: 0}
-  flower2: {fileID: 0}
-  flower3: {fileID: 0}
-  flower4: {fileID: 0}
+  flower1: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+  flower2: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
+  flower3: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
+  flower4: {fileID: 1134622652620946, guid: a5bcde2c2aa4d0d449745d363701bda7, type: 2}
 --- !u!1 &207487553
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   count: 0
   count_wall: 0
   interval: 10
-  nast_grass_y: 35.4
+  nest_grass_y: 35.4
 --- !u!4 &207487555
 Transform:
   m_ObjectHideFlags: 0
@@ -1073,7 +1073,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 21.3
+  orthographic size: 17.72
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1171,6 +1171,60 @@ Transform:
   m_Father: {fileID: 1017498087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1037260995
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -14.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 24.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3.3005629
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3.300564
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172068515158874, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 3.300564
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1062291202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,10 +1257,10 @@ MonoBehaviour:
   bg1: {fileID: 160189173}
   bg2: {fileID: 1649100838}
   slime: {fileID: 668880630}
-  flower1: {fileID: 0}
-  flower2: {fileID: 0}
-  flower3: {fileID: 0}
-  flower4: {fileID: 0}
+  flower1: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+  flower2: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
+  flower3: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
+  flower4: {fileID: 1134622652620946, guid: a5bcde2c2aa4d0d449745d363701bda7, type: 2}
 --- !u!212 &1062291204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1569,10 +1623,10 @@ MonoBehaviour:
   bg1: {fileID: 160189173}
   bg2: {fileID: 1062291202}
   slime: {fileID: 668880630}
-  flower1: {fileID: 0}
-  flower2: {fileID: 0}
-  flower3: {fileID: 0}
-  flower4: {fileID: 0}
+  flower1: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+  flower2: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
+  flower3: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
+  flower4: {fileID: 1134622652620946, guid: a5bcde2c2aa4d0d449745d363701bda7, type: 2}
 --- !u!212 &1649100840
 SpriteRenderer:
   m_ObjectHideFlags: 0

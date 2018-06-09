@@ -57,6 +57,7 @@
      <Compile Include="Assets\script\Bubble.cs" />
      <Compile Include="Assets\script\camera_follow.cs" />
      <Compile Include="Assets\script\create_stair.cs" />
+     <Compile Include="Assets\script\de_flower.cs" />
      <Compile Include="Assets\script\draw_line.cs" />
      <Compile Include="Assets\script\get_grass.cs" />
      <Compile Include="Assets\script\grass.cs" />
