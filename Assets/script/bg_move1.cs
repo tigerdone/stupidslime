@@ -18,6 +18,11 @@ public class bg_move1 : MonoBehaviour {
     //private GameObject flowerclone3;
     //private GameObject flowerclone4;
 
+    private ArrayList flowerclone1 = new ArrayList();
+    private ArrayList flowerclone2 = new ArrayList();
+    private ArrayList flowerclone3 = new ArrayList();
+    private ArrayList flowerclone4 = new ArrayList();
+
 
 
     // Use this for initialization
@@ -39,7 +44,8 @@ public class bg_move1 : MonoBehaviour {
                 transform.position = new Vector3(transform.position.x, 
                     bg1.transform.position.y + 68f, transform.position.z);
 
-                get_flower();
+                move_flower();
+
                 //flowerclone1.transform.position = new Vector3(flowerclone1.transform.position.x,
                 //    flowerclone1.transform.position.y + 136f, flowerclone1.transform.position.z);
 
@@ -57,8 +63,11 @@ public class bg_move1 : MonoBehaviour {
             {
                 transform.position = new Vector3(transform.position.x,
                    bg2.transform.position.y+68f, transform.position.z);
-                get_flower();
+                move_flower();
+
+
             }
+
             transform.localScale = new Vector3(transform.localScale.x,
                 transform.localScale.y * (-1), transform.localScale.z);
         }
@@ -73,27 +82,61 @@ public class bg_move1 : MonoBehaviour {
         for (int i = 0; i < 3; i++)
         {
             x_position = Random.Range(-30, 30);
-            y_position = Random.Range(-40, 40);
-            Instantiate(flower1, new Vector3(x_position + transform.position.x,
-                y_position + transform.position.y, 4), Quaternion.identity);
+            y_position = Random.Range(-32, 32);
+            flowerclone1.Add(Instantiate(flower1, new Vector3(x_position + transform.position.x,
+                y_position + transform.position.y, 4), Quaternion.identity));
 
             x_position = Random.Range(-30, 30);
-            y_position = Random.Range(-40, 40);
-            Instantiate(flower2, new Vector3(x_position + transform.position.x,
-                y_position + transform.position.y, 4), Quaternion.identity);
+            y_position = Random.Range(-32, 32);
+            flowerclone2.Add(Instantiate(flower2, new Vector3(x_position + transform.position.x,
+                y_position + transform.position.y, 4), Quaternion.identity));
 
             x_position = Random.Range(-30, 30);
-            y_position = Random.Range(-40, 40);
-            Instantiate(flower3, new Vector3(x_position + transform.position.x,
-                y_position + transform.position.y, 4), Quaternion.identity);
+            y_position = Random.Range(-32, 32);
+            flowerclone3.Add(Instantiate(flower3, new Vector3(x_position + transform.position.x,
+                y_position + transform.position.y, 4), Quaternion.identity));
 
             x_position = Random.Range(-30, 30);
-            y_position = Random.Range(-40, 40);
-            Instantiate(flower4, new Vector3(x_position + transform.position.x,
-                y_position + transform.position.y, 4), Quaternion.identity);
+            y_position = Random.Range(-32, 32);
+            flowerclone4.Add(Instantiate(flower4, new Vector3(x_position + transform.position.x,
+                y_position + transform.position.y, 4), Quaternion.identity));
     
         }
     }
+    void move_flower()
+    {
+        float x_position = 0;
+        float y_position = 0;
 
+
+        foreach (GameObject item in flowerclone1)
+        {
+            x_position = Random.Range(-30, 30);
+            y_position = Random.Range(-32, 32);
+            item.transform.position = new Vector3(item.transform.position.x,
+                item.transform.position.y + 204f, item.transform.position.z);
+        }
+        foreach (GameObject item in flowerclone2)
+        {
+            x_position = Random.Range(-30, 30);
+            y_position = Random.Range(-32, 32);
+            item.transform.position = new Vector3(item.transform.position.x,
+                item.transform.position.y + 204f, item.transform.position.z);
+        }
+        foreach (GameObject item in flowerclone3)
+        {
+            x_position = Random.Range(-30, 30);
+            y_position = Random.Range(-32, 32);
+            item.transform.position = new Vector3(item.transform.position.x,
+                item.transform.position.y + 204f, item.transform.position.z);
+        }
+        foreach (GameObject item in flowerclone4)
+        {
+            x_position = Random.Range(-30, 30);
+            y_position = Random.Range(-32, 32);
+            item.transform.position = new Vector3(item.transform.position.x,
+                item.transform.position.y + 204f, item.transform.position.z);
+        }
+    }
 
 }

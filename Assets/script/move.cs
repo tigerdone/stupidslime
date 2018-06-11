@@ -12,32 +12,21 @@ public class move : MonoBehaviour
     public int force = 500;
     public Animator anim;
 
-    //public camera_follow _Follow;
-    //public Camera Cameras;
+    public int add_force = 2500;
 
-    //time
     private float time1 = 0;
     private float time2 = 0;
     private bool fail = false;
 
-    // Use this for initialization
     void Start()
     {
-        //anim = GameObject.Find("slimeRed_0").GetComponent<Animator>();
-        //mGroundCheck = transform.Find("GroundCheck");
-        //Debug.Log("Vector2.down:" + Vector2.down);
-        //Debug.Log("Vector2.right:" + Vector2.right);
+
 
     }
 
 
     void FixedUpdate()
     {
-        //float fInput = 0;
-        //float fInput = Input.GetAxis("Vertical");
-
-        //控制移动
-        //Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -46,46 +35,14 @@ public class move : MonoBehaviour
 
 
 
-
-
-        //if (fInput * rigidBody.velocity.x < MaxSpeed)
-        //{
-        //    rigidBody.AddForce(Vector2.right * fInput * Moveforce);
-        //}
-
-
-        ////限制最大速度
-        //if (Mathf.Abs(rigidBody.velocity.x) > MaxSpeed)
-        //{
-        //    rigidBody.velocity = new Vector2(Mathf.Sign(rigidBody.velocity.x) * MaxSpeed, rigidBody.velocity.y);
-        //}
-
-        //if (fInput > 0 && !bFacerright)
-        //{
-        //    flip();
-        //}
-        //if (fInput < 0 && bFacerright)
-        //{
-        //    flip();
-        //}
-
-
-
-        //alive();
-
-
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //dic_control();
         move_control();
         position_limite();
-        //for (int i = 0; i < 1; i++)
-        //{
-        //    Debug.Log(Cameras.orthographicSize);
-        //}
+     
     }
 
     void alive()
@@ -134,7 +91,7 @@ public class move : MonoBehaviour
             {
                 time2 = Time.time;
 
-                force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 1.6f) - 0.1) * 1500) + 5000;
+                //force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
 
             }
             else
@@ -164,7 +121,7 @@ public class move : MonoBehaviour
             {
                 time2 = Time.time;
 
-                force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 1.6f) - 0.1) * 1500) + 5000;
+                force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
 
             }
             else
@@ -188,23 +145,19 @@ public class move : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
         {
-            //rig.AddForce(new Vector2(0, force));
-            //rig.AddForce(Vector2.right* force);
 
             time1 = Time.time;
-            anim.SetBool("getforce", true);
-            anim.SetBool("move", false);
-
-            //anim.SetBool("fly", false);
-
-            //Debug.Log("time1:" + time1);
+          
         }
 
         if (Input.GetKey(KeyCode.Space) && Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
         {
             time2 = Time.time;
 
-            force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 1.6f) - 0.1) * 1500) + 5000;
+            anim.SetBool("getforce", true);
+            anim.SetBool("move", false);
+
+            force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
             //Debug.Log("aaa" + force);
 
         }
@@ -219,7 +172,7 @@ public class move : MonoBehaviour
         {
             time2 = Time.time;
 
-            force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 1.6f) - 0.1) * 1500) + 5000;
+            force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
 
             if (Input.GetKey(KeyCode.DownArrow))
             {
@@ -255,37 +208,13 @@ public class move : MonoBehaviour
             fail = false;
 
         }
-        //Debug.Log(fail);
-        //瞬间移动
-        //if (Input.GetKeyDown(KeyCode.Z))
-        //{
-        //    //判断方向
-        //    if (transform.localScale.x > 0)
-        //    {
-        //        dirc = 1;
-        //    }
-        //    else
-        //    {
-        //        dirc = -1;
-        //    }
-        //    rig.AddForce(new Vector2(force * dirc, 0));
-        //    //rig.AddForce(Vector2.right * force*3* dirc);
-
-        //}
-
+       
 
     }
 
     void position_limite()
     {
-        //if(rig.position.x > (_Follow.maxXAndY.x + Cameras.orthographicSize))
-        //{
-        //    rig.position = new Vector2(_Follow.maxXAndY.x + Cameras.orthographicSize, rig.position.y);
-        //}
-        //if (rig.position.x < (_Follow.minXAndY.x - Cameras.orthographicSize/2))
-        //{
-        //    rig.position = new Vector2(_Follow.minXAndY.x - Cameras.orthographicSize, rig.position.y);
-        //}
+       
         if (rig.position.x > 51)
         {
             rig.position = new Vector2(51, rig.position.y);

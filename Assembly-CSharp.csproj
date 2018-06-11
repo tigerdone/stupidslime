@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\script\_7_5_1.cs" />
+     <Compile Include="Assets\script\attack\attack.cs" />
      <Compile Include="Assets\script\bg_move.cs" />
      <Compile Include="Assets\script\bg_move1.cs" />
      <Compile Include="Assets\script\Bubble.cs" />

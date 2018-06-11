@@ -309,7 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 160189175}
   - component: {fileID: 160189174}
-  - component: {fileID: 160189176}
+  - component: {fileID: 160189177}
   m_Layer: 0
   m_Name: bg11
   m_TagString: Untagged
@@ -376,7 +376,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &160189176
+--- !u!114 &160189177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -390,9 +390,9 @@ MonoBehaviour:
   bg1: {fileID: 1649100838}
   bg2: {fileID: 1062291202}
   slime: {fileID: 668880630}
-  flower1: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
-  flower2: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
-  flower3: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
+  flower1: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
+  flower2: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
+  flower3: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
   flower4: {fileID: 1134622652620946, guid: a5bcde2c2aa4d0d449745d363701bda7, type: 2}
 --- !u!1 &207487553
 GameObject:
@@ -639,6 +639,7 @@ MonoBehaviour:
   Moveforce: 480
   force: 3500
   anim: {fileID: 504162319}
+  add_force: 2500
 --- !u!4 &668880632
 Transform:
   m_ObjectHideFlags: 0
@@ -651,6 +652,7 @@ Transform:
   m_Children:
   - {fileID: 504162321}
   - {fileID: 1679064962}
+  - {fileID: 2114429390}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1235,7 +1237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1062291205}
   - component: {fileID: 1062291204}
-  - component: {fileID: 1062291203}
+  - component: {fileID: 1062291206}
   m_Layer: 0
   m_Name: bg11 (2)
   m_TagString: Untagged
@@ -1243,24 +1245,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1062291203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1062291202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a8dece7d54e71f489b88199fbf253af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bg1: {fileID: 160189173}
-  bg2: {fileID: 1649100838}
-  slime: {fileID: 668880630}
-  flower1: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
-  flower2: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
-  flower3: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
-  flower4: {fileID: 1134622652620946, guid: a5bcde2c2aa4d0d449745d363701bda7, type: 2}
 --- !u!212 &1062291204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1320,6 +1304,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1062291206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062291202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8dece7d54e71f489b88199fbf253af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bg1: {fileID: 160189173}
+  bg2: {fileID: 1649100838}
+  slime: {fileID: 668880630}
+  flower1: {fileID: 1134622652620946, guid: a5bcde2c2aa4d0d449745d363701bda7, type: 2}
+  flower2: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
+  flower3: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
+  flower4: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
 --- !u!1 &1168752784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,7 +1603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1649100841}
   - component: {fileID: 1649100840}
-  - component: {fileID: 1649100839}
+  - component: {fileID: 1649100842}
   m_Layer: 0
   m_Name: bg11 (1)
   m_TagString: Untagged
@@ -1609,24 +1611,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1649100839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1649100838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a8dece7d54e71f489b88199fbf253af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bg1: {fileID: 160189173}
-  bg2: {fileID: 1062291202}
-  slime: {fileID: 668880630}
-  flower1: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
-  flower2: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
-  flower3: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
-  flower4: {fileID: 1134622652620946, guid: a5bcde2c2aa4d0d449745d363701bda7, type: 2}
 --- !u!212 &1649100840
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1686,6 +1670,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649100842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649100838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8dece7d54e71f489b88199fbf253af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bg1: {fileID: 160189173}
+  bg2: {fileID: 1062291202}
+  slime: {fileID: 668880630}
+  flower1: {fileID: 1305927097535070, guid: 732b384f48d8b464280f86cdcf7a994f, type: 2}
+  flower2: {fileID: 1201874436796198, guid: 4ddf916a5014e7f47b9841d0d023a79c, type: 2}
+  flower3: {fileID: 1134622652620946, guid: a5bcde2c2aa4d0d449745d363701bda7, type: 2}
+  flower4: {fileID: 1834971607122204, guid: f170e3dd4d3d01c43b83365152d10c28, type: 2}
 --- !u!1 &1679064961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,3 +1884,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40, y: 2.9282565}
   m_EdgeRadius: 0
+--- !u!1 &2114429389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2114429390}
+  - component: {fileID: 2114429391}
+  m_Layer: 0
+  m_Name: attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2114429390
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114429389}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.8, z: 3.578125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 668880632}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2114429391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114429389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fbcf189409384408948428bbf7a1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slime: {fileID: 504162318}
+  arrow: {fileID: 1493130552942792, guid: c5573a51e480bc540a504633249ccd2e, type: 2}

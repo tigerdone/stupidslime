@@ -102,7 +102,7 @@ public class draw_line : MonoBehaviour {
 
                 lineInfo.Add(position2);
                 x -= 100;
-                position.y += 0.5f;
+                position.y += 0.2f;
 
             }
         }
