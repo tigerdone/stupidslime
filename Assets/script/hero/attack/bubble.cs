@@ -8,10 +8,10 @@ public class bubble : MonoBehaviour {
     private Collider2D the_bubble;
     private Rigidbody2D rig;
 
-    private bool object_in = false;
+    private bool object_in = true;
     // Use this for initialization
     void Start () {
-        Destroy(this.gameObject, 5);
+        Destroy(this.gameObject, 3);
         the_bubble = GetComponent<Collider2D>();
         rig = GetComponent<Rigidbody2D>();
         the_bubble.isTrigger = true;

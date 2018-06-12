@@ -8,21 +8,27 @@ public class attack : MonoBehaviour {
     public GameObject arrow;
     
     public GameObject Bubble;
+    public Animator anim;
 
-    private float add_x = 10f;
-    private float add_y = 10f;
+    private float add_x = 0f;
+    private float add_y = 0f;
+
     private GameObject the_arrow;
     private GameObject the_Bubble;
-    public Animator anim;
+
+    private float angle;
+
+    private float bullet_force = 1000f;
 
 
     // Use this for initialization
     void Start () {
+        //Debug.Log("Sin:" + Mathf.Sin(30/ Mathf.Rad2Deg));
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         draw_arrow();
     }
     void draw_arrow()
@@ -34,7 +40,6 @@ public class attack : MonoBehaviour {
         //Vector3 test4;
         float distance = 0;
         float add_scale = 0;
-        float angle;
         Vector3 mousePosition = new Vector3(0, 0, 60);
 
 
@@ -92,7 +97,8 @@ public class attack : MonoBehaviour {
                slime.transform.position.y + add_y, slime.transform.position.z),
                RanRota);
             //the_Bubble.rigidbody2D.AddForce(new Vector2(0, 100));
-            getfouce(the_Bubble);
+
+            getfouce(the_Bubble, angle+20);
             Destroy(the_arrow);
 
         }
@@ -105,11 +111,15 @@ public class attack : MonoBehaviour {
         //    Debug.Log("Pressed middle click.");
     }
 
-    void getfouce(GameObject aa)
+    void getfouce(GameObject aa,float angle)
     {
         Rigidbody2D rig;
         rig = aa.GetComponent<Rigidbody2D>();
-        rig.AddForce(new Vector2(0, 1000));
+
+
+
+        //Debug.Log(Mathf.Sin(90 - angle));
+        rig.AddForce(new Vector2(Mathf.Cos(90- angle/ Mathf.Rad2Deg) *1000, Mathf.Sin(90- angle/Mathf.Rad2Deg) * 1000));
     }
 
     private float GetAngle(Vector3 a, Vector3 b)

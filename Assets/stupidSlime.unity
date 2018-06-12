@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 504162320}
   - component: {fileID: 504162322}
   - component: {fileID: 504162319}
+  - component: {fileID: 504162323}
   m_Layer: 0
   m_Name: slimeRed_0
   m_TagString: Untagged
@@ -503,6 +504,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.18401313}
   serializedVersion: 2
   m_Radius: 1.5662484
+--- !u!114 &504162323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 504162318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bcece771916e944a45253149a8f940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  the_object_in: 0
 --- !u!1 &668880630
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f5a1b77d886704f9b40b30dc4d8805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  child: {fileID: 504162323}
 --- !u!1 &787540587
 GameObject:
   m_ObjectHideFlags: 0

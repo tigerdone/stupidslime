@@ -151,7 +151,7 @@ public class move : MonoBehaviour
         {
             time2 = Time.time;
 
-            anim.SetTrigger("getforce");
+            anim.SetBool("getforce",true);
 
             //anim.SetBool("getforce", true);
             //anim.SetBool("move", false);
@@ -167,33 +167,45 @@ public class move : MonoBehaviour
 
         //}
 
-        if (Input.GetKeyUp(KeyCode.Space) && Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
+        if (Input.GetKeyUp(KeyCode.Space) )
         {
-            time2 = Time.time;
 
-            force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
-
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
             {
+
                 time2 = Time.time;
+
+                force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
+
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    time2 = Time.time;
+                }
+                else
+                {
+                    rig.AddForce(new Vector2(0, force));
+                }
+
+                //anim.SetBool("getforce", false);
+                //anim.SetBool("move", true);
+                anim.SetTrigger("move");
+                anim.SetBool("getforce", false);
+
+                //anim.SetBool("stand", false);
+                //Debug.Log("aaa" + force);
+
+                force = 5000;
+
+
+                    //rig.AddForce(Vector2.right* force);
+                    //Debug.Log("time2:" + time2);
             }
             else
             {
-                rig.AddForce(new Vector2(0, force));
+                anim.SetTrigger("move");
+                anim.SetBool("getforce", false);
+
             }
-
-            //anim.SetBool("getforce", false);
-            //anim.SetBool("move", true);
-            anim.SetTrigger("move");
-
-            //anim.SetBool("stand", false);
-            //Debug.Log("aaa" + force);
-
-            force = 5000;
-
-
-            //rig.AddForce(Vector2.right* force);
-            //Debug.Log("time2:" + time2);
 
         }
         if (Physics2D.Raycast(origin.position, Vector2.down, 0.1f) == false)

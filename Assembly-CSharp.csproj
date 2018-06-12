@@ -58,6 +58,7 @@
      <Compile Include="Assets\script\hero\attack\bubble.cs" />
      <Compile Include="Assets\script\hero\jump.cs" />
      <Compile Include="Assets\script\hero\move.cs" />
+     <Compile Include="Assets\script\hero\object_in.cs" />
      <Compile Include="Assets\script\stair\get_grass.cs" />
      <Compile Include="Assets\script\stair\grass.cs" />
  <Reference Include="UnityEngine.UI">
