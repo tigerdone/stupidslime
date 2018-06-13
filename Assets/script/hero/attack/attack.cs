@@ -9,6 +9,7 @@ public class attack : MonoBehaviour {
     
     public GameObject Bubble;
     public Animator anim;
+    public float bullet_force = 1000f;
 
     private float add_x = 0f;
     private float add_y = 0f;
@@ -18,7 +19,6 @@ public class attack : MonoBehaviour {
 
     private float angle;
 
-    private float bullet_force = 1000f;
 
 
     // Use this for initialization
@@ -83,6 +83,8 @@ public class attack : MonoBehaviour {
                 distance = Mathf.Clamp(distance, 240f, 540f);
                 add_scale = (distance - 240) / 300 * 0.24f + 0.36f;
 
+                bullet_force = (distance - 240) / 300 * 500f + 1500f;
+
                 the_arrow.transform.localScale = new Vector3(add_scale,
                 the_arrow.transform.localScale.y, the_arrow.transform.localScale.z);
 
@@ -119,7 +121,8 @@ public class attack : MonoBehaviour {
 
 
         //Debug.Log(Mathf.Sin(90 - angle));
-        rig.AddForce(new Vector2(Mathf.Cos(90- angle/ Mathf.Rad2Deg) *1000, Mathf.Sin(90- angle/Mathf.Rad2Deg) * 1000));
+        rig.AddForce(new Vector2(Mathf.Cos(90- angle/ Mathf.Rad2Deg) * bullet_force, 
+            Mathf.Sin(90- angle/Mathf.Rad2Deg) * bullet_force));
     }
 
     private float GetAngle(Vector3 a, Vector3 b)

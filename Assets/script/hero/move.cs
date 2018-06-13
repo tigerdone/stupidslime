@@ -14,6 +14,11 @@ public class move : MonoBehaviour
 
     public int add_force = 2500;
 
+    public float camera_right = 51f;
+    public float camera_left = -37.8f;
+
+       
+
     private float time1 = 0;
     private float time2 = 0;
     private bool fail = false;
@@ -32,9 +37,6 @@ public class move : MonoBehaviour
         {
             time1 = Time.time;
         }
-
-
-
         
     }
 
@@ -47,12 +49,12 @@ public class move : MonoBehaviour
 
     void alive()
     {
-        float step = 8 * Time.deltaTime;
-        if (transform.position.y < -100)
-        {
-            gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, new Vector3(0, -1, 0), step);
-
-        }
+        //float step = 8 * Time.deltaTime;
+        //if (transform.position.y < -100)
+        //{
+        //    gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, 
+        //        new Vector3(0, -1, 0), step);
+        //}
     }
    
     void move_control()
@@ -75,6 +77,7 @@ public class move : MonoBehaviour
         //行走控制
         if (Input.GetKey(KeyCode.D))
         {
+            //跳跃加速
             if(!Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
             {
                 MaxSpeed = 25;
@@ -82,14 +85,10 @@ public class move : MonoBehaviour
             else
             {
                 MaxSpeed = 10;
-
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 time2 = Time.time;
-
-                //force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
-
             }
             else
             {
@@ -135,10 +134,10 @@ public class move : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            time1 = Time.time;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    time1 = Time.time;
+        //}
 
         if (Input.GetKeyDown(KeyCode.Space) && Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
         {
@@ -153,19 +152,10 @@ public class move : MonoBehaviour
 
             anim.SetBool("getforce",true);
 
-            //anim.SetBool("getforce", true);
-            //anim.SetBool("move", false);
-
             force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
-            //Debug.Log("aaa" + force);
 
         }
-        //if (Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
-        //{
-        //    //anim.SetBool("stand", true);
-        //    //anim.SetBool("fly", false);
-
-        //}
+      
 
         if (Input.GetKeyUp(KeyCode.Space) )
         {
@@ -186,19 +176,12 @@ public class move : MonoBehaviour
                     rig.AddForce(new Vector2(0, force));
                 }
 
-                //anim.SetBool("getforce", false);
-                //anim.SetBool("move", true);
                 anim.SetTrigger("move");
                 anim.SetBool("getforce", false);
-
-                //anim.SetBool("stand", false);
-                //Debug.Log("aaa" + force);
 
                 force = 5000;
 
 
-                    //rig.AddForce(Vector2.right* force);
-                    //Debug.Log("time2:" + time2);
             }
             else
             {
@@ -211,7 +194,6 @@ public class move : MonoBehaviour
         if (Physics2D.Raycast(origin.position, Vector2.down, 0.1f) == false)
         {
             fail = true;
-            //Debug.Log(fail);
 
         }
         if (fail && Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
@@ -226,12 +208,11 @@ public class move : MonoBehaviour
 
     void position_limite()
     {
-       
-        if (rig.position.x > 51)
+        if (rig.position.x > camera_right)
         {
             rig.position = new Vector2(51, rig.position.y);
         }
-        if (rig.position.x < -37.8f)
+        if (rig.position.x < camera_left)
         {
             rig.position = new Vector2(-37.8f, rig.position.y);
         }

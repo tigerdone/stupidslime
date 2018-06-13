@@ -59,6 +59,9 @@
      <Compile Include="Assets\script\hero\jump.cs" />
      <Compile Include="Assets\script\hero\move.cs" />
      <Compile Include="Assets\script\hero\object_in.cs" />
+     <Compile Include="Assets\script\monster\bron_monster.cs" />
+     <Compile Include="Assets\script\monster\monsetr_ai.cs" />
+     <Compile Include="Assets\script\monster\monster.cs" />
      <Compile Include="Assets\script\stair\get_grass.cs" />
      <Compile Include="Assets\script\stair\grass.cs" />
  <Reference Include="UnityEngine.UI">

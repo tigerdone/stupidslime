@@ -7,6 +7,8 @@ public class bubble : MonoBehaviour {
 
     private Collider2D the_bubble;
     private Rigidbody2D rig;
+    //private SpriteRenderer Sprites;
+
 
     private bool object_in = true;
     // Use this for initialization
@@ -26,8 +28,10 @@ public class bubble : MonoBehaviour {
     {
         object_in = false;
     }
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
+        //Sprites = other.GetComponent =
+        //Debug.Log("bubble:OnTriggerEnter2D");
         object_in = true;
     }
     void set_trigger()

@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212184654552819450}
   - component: {fileID: 61743366107607842}
   - component: {fileID: 114357319749867476}
+  - component: {fileID: 114343572754142420}
+  - component: {fileID: 95950446644153312}
   m_Layer: 0
   m_Name: grass2
   m_TagString: Untagged
@@ -67,6 +69,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.124117, y: 0.97676855}
   m_EdgeRadius: 0
+--- !u!95 &95950446644153312
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833786489914626}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114343572754142420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833786489914626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624bbf3f1aa91a640b4e394c934cd869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1421958977097918, guid: ecafe1e52ae6b9341bf3fbaa642e3b06, type: 2}
+  bron_monster: {fileID: 1939442306436794, guid: 4c966e932f0f3c543873b74417e2d455,
+    type: 2}
+  h: 2
 --- !u!114 &114357319749867476
 MonoBehaviour:
   m_ObjectHideFlags: 1
