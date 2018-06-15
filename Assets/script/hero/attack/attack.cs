@@ -11,6 +11,8 @@ public class attack : MonoBehaviour {
     public Animator anim;
     public float bullet_force = 1000f;
 
+    public int attack_num =  0;
+
     private float add_x = 0f;
     private float add_y = 0f;
 
@@ -99,7 +101,7 @@ public class attack : MonoBehaviour {
                slime.transform.position.y + add_y, slime.transform.position.z),
                RanRota);
             //the_Bubble.rigidbody2D.AddForce(new Vector2(0, 100));
-
+            attack_num++;
             getfouce(the_Bubble, angle+20);
             Destroy(the_arrow);
 
@@ -117,8 +119,6 @@ public class attack : MonoBehaviour {
     {
         Rigidbody2D rig;
         rig = aa.GetComponent<Rigidbody2D>();
-
-
 
         //Debug.Log(Mathf.Sin(90 - angle));
         rig.AddForce(new Vector2(Mathf.Cos(90- angle/ Mathf.Rad2Deg) * bullet_force, 

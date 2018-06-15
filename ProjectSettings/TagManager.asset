@@ -6,6 +6,9 @@ TagManager:
   tags:
   - enemy
   - bullet
+  - stair
+  - text
+  - tier
   layers:
   - Default
   - TransparentFX
@@ -42,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer
+    uniqueID: 4244904507
     locked: 0
