@@ -21,6 +21,7 @@ public class attack : MonoBehaviour {
 
     private float angle;
 
+    public AudioSource audio_attack;
 
 
     // Use this for initialization
@@ -105,6 +106,7 @@ public class attack : MonoBehaviour {
             getfouce(the_Bubble, angle+20);
             Destroy(the_arrow);
 
+            audio_attack.Play();
         }
 
         //if (Input.GetMouseButtonDown(1))

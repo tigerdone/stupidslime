@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\script\begin\begin.cs" />
      <Compile Include="Assets\script\bg\bg_move.cs" />
      <Compile Include="Assets\script\bg\bg_move1.cs" />
      <Compile Include="Assets\script\camera_follow.cs" />

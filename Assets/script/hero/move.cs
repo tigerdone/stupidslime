@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class move : MonoBehaviour
 {
-
     public Rigidbody2D rig;
     public Transform origin;
     public int MaxSpeed = 10;
@@ -17,7 +16,9 @@ public class move : MonoBehaviour
     public float camera_right = 51f;
     public float camera_left = -37.8f;
 
-       
+    public AudioSource audio_jump;
+    public AudioSource audio_drop;
+
 
     private float time1 = 0;
     private float time2 = 0;
@@ -44,7 +45,6 @@ public class move : MonoBehaviour
     {
         move_control();
         position_limite();
-     
     }
 
     void alive()
@@ -150,7 +150,9 @@ public class move : MonoBehaviour
         {
             time2 = Time.time;
 
+            //Debug.Log("okok");
             anim.SetBool("getforce",true);
+
 
             force = (int)((Mathf.Clamp(time2 - time1, 0.1f, 0.8f) - 0.1) * 2500) + 5000;
 
@@ -162,6 +164,8 @@ public class move : MonoBehaviour
 
             if (Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
             {
+                audio_jump.Play();
+
 
                 time2 = Time.time;
 
@@ -185,22 +189,24 @@ public class move : MonoBehaviour
             }
             else
             {
-                anim.SetTrigger("move");
+                //anim.SetTrigger("move");
                 anim.SetBool("getforce", false);
 
             }
 
         }
-        if (Physics2D.Raycast(origin.position, Vector2.down, 0.1f) == false)
+        if (rig.velocity.y > 10 && !Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
         {
+            //Debug.Log(rig.velocity.y);
             fail = true;
 
         }
-        if (fail && Physics2D.Raycast(origin.position, Vector2.down, 0.1f))
+        if (fail && Physics2D.Raycast(origin.position, Vector2.down, 0.1f)&&rig.velocity.y<0)
         {
             anim.Play("fail", 0, 0);
             fail = false;
-
+            //Debug.Log("times");
+            audio_drop.Play();
         }
        
 
